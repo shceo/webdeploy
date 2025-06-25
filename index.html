@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- Если задаёте базовый href, оставьте это -->
   <base href="/">
-
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="description" content="A new Flutter project.">
@@ -20,19 +18,19 @@
   <title>tg</title>
   <link rel="manifest" href="manifest.json">
 
-  <!-- === ВСТАВЬТЕ ЭТИ ДВЕ СТРОКИ === -->
-  <!-- 1) Настраиваем, где sql.js найдёт файл .wasm -->
+  <!-- === ОБЯЗАТЕЛЬНО ВСТАВЬТЕ ПОД КОММЕНТАРИЕМ НИЖЕ === -->
+  <!-- 1) Сначала объявляем locateFile, чтобы sql.js знал, откуда брать .wasm -->
   <script>
     window.initSqlJs = {
       locateFile: file => `https://unpkg.com/sql.js@1.8.0/dist/${file}`
     };
   </script>
-  <!-- 2) Подключаем сам движок sql.js -->
+  <!-- 2) Затем подключаем движок, чтобы он сразу использовал указанную locateFile -->
   <script src="https://unpkg.com/sql.js@1.8.0/dist/sql-wasm.js"></script>
-  <!-- ============================= -->
+  <!-- ========================================== -->
 </head>
 <body>
-  <!-- Flutter Web-движок -->
+  <!-- 3) После этого подключаем Flutter Web -->
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
