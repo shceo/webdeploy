@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <!-- Если задаёте базовый href, оставьте это -->
   <base href="/">
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="INFINBUDDY.">
+  <meta name="description" content="A new Flutter project.">
 
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
@@ -16,22 +17,22 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title>tgwebbapp</title>
+  <title>tg</title>
   <link rel="manifest" href="manifest.json">
 
-  <!-- 1) Подскажем sql.js, где искать его .wasm -->
+  <!-- === ВСТАВЬТЕ ЭТИ ДВЕ СТРОКИ === -->
+  <!-- 1) Настраиваем, где sql.js найдёт файл .wasm -->
   <script>
     window.initSqlJs = {
-      locateFile: file => 
-        `https://unpkg.com/sql.js@1.8.0/dist/${file}`
+      locateFile: file => `https://unpkg.com/sql.js@1.8.0/dist/${file}`
     };
   </script>
-
   <!-- 2) Подключаем сам движок sql.js -->
   <script src="https://unpkg.com/sql.js@1.8.0/dist/sql-wasm.js"></script>
+  <!-- ============================= -->
 </head>
 <body>
-  <!-- 3) Flutter Web-движок -->
+  <!-- Flutter Web-движок -->
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
